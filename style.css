@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+}
+
 /*? TEXT-COLORS */
 .text-color-amaranth{
     color: #640606;
@@ -16,7 +20,25 @@
 }
 
 /*= BODY */
+/*? MAIN */
 #filters > button{
     border: 1px solid #640606;
     font-size: 14px;
 }
+
+#menu{
+    height: calc(100vh - 250px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#pizzas-types a.active{
+    color: #495057;
+    border: 1px solid #dee2e6;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+}
+/* 
+div.pizza-card{
+    border: 1px solid #000;
+} */
