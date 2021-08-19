@@ -6,8 +6,17 @@
     box-sizing: border-box;
 }
 
+/*? TEXT-COLORS */
+.text-color-amaranth{
+    color: #640606;
+}
+/*? BACKGROUND-COLORS */
 .bg-color-amaranth{
     background-color: #640606;
 }
 
 /*= BODY */
+#filters > button{
+    border: 1px solid #640606;
+    font-size: 14px;
+}
