@@ -51,10 +51,14 @@
                 <div id="menu" class="container-fluid">
                     <div class="row">
                         <div class=" my-2 col-sm-6 col-md-3" v-for="(element, index) in menu">
-                            <div class="pizza-card border border-dark rounded">
-                                <div class="h5">fgdgs <span class="text-color-amaranth h6">price</span></div>
-                                <h6>cuai</h6>
-                                <em>ei</em>
+                            <div class="pizza-card border border-dark rounded p-2">
+                                <div class="h5">{{ element.name }}<span class="text-color-amaranth h6 ps-2">&#8364 {{
+                                        element.price
+                                        }}</span></div>
+                                <div><a href="#"></a></div>
+                                <h6><span v-if="element.white === 0">Base Rossa</span><span
+                                        v-else="element.white === 1">Base Bianca</span></h6>
+                                <em>{{ ingredientsList(element) }} </em>
                             </div>
                         </div>
                     </div>

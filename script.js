@@ -9,7 +9,7 @@ var root = new Vue(
                 {
                     id: 4,
                     name: "Abarth",
-                    price: 8.50,
+                    price: "8.50",
                     white: 0,
                     special: 0,
                     ingredients: [
@@ -34,7 +34,7 @@ var root = new Vue(
                 {
                     id: 5,
                     name: "Abatantuono",
-                    price: 9.50,
+                    price: "9.50",
                     white: 1,
                     special: 0,
                     ingredients: [
@@ -59,7 +59,7 @@ var root = new Vue(
                 {
                     id: 6,
                     name: "Agenzia delle entrate",
-                    price: 9.00,
+                    price: "9.00",
                     white: 1,
                     special: 0,
                     ingredients: [
@@ -84,7 +84,7 @@ var root = new Vue(
                 {
                     id: 7,
                     name: "Al Bano",
-                    price: 10.50,
+                    price: "10.50",
                     white: 1,
                     special: 1,
                     ingredients: [
@@ -117,7 +117,7 @@ var root = new Vue(
                 {
                     id: 8,
                     name: "Al Pacino",
-                    price: 11.00,
+                    price: "11.00",
                     white: 0,
                     special: 1,
                     ingredients: [
@@ -154,7 +154,7 @@ var root = new Vue(
                 {
                     id: 9,
                     name: "Alberto di Monaco",
-                    price: 10.00,
+                    price: "10.00",
                     white: 0,
                     special: 1,
                     ingredients: [
@@ -187,7 +187,7 @@ var root = new Vue(
                 {
                     id: 10,
                     name: "Aldo, Giovanni, Giacomo",
-                    price: 11.00,
+                    price: "11.00",
                     white: 1,
                     special: 1,
                     ingredients: [
@@ -220,7 +220,7 @@ var root = new Vue(
                 {
                     id: 11,
                     name: "Alesì",
-                    price: 10.00,
+                    price: "10.00",
                     white: 0,
                     special: 1,
                     ingredients: [
@@ -253,7 +253,7 @@ var root = new Vue(
                 {
                     id: 12,
                     name: "MarcoLanci",
-                    price: 10.00,
+                    price: "10.00",
                     white: 0,
                     special: 1,
                     ingredients: [
@@ -278,7 +278,7 @@ var root = new Vue(
                 {
                     id: 2,
                     name: "Margherita",
-                    price: 6.50,
+                    price: "6.50",
                     white: 0,
                     special: 0,
                     ingredients: [
@@ -292,9 +292,18 @@ var root = new Vue(
                         }
                     ]
                 },
-            ]
+            ],
         },
+
         methods: {
+            ingredientsList(element) {
+                const ingredientsList = element.ingredients.reduce(
+                    (list, i) => list + i.name + ", ",
+                    ""
+                );
+
+                return ingredientsList.slice(0, -2);
+            },
 
         },
     });
