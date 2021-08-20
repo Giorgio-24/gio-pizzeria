@@ -25,7 +25,7 @@
         <main class="p-3 container-fluid">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Cerca pizza per nome" aria-label="Username"
-                    aria-describedby="basic-addon1">
+                    aria-describedby="basic-addon1" v-model="searchMyPizza">
                 <span class="input-group-text bg-light" id="basic-addon1"><i class="fas fa-backspace"></i></span>
                 <span class="input-group-text bg-color-amaranth" id="basic-addon1"><i
                         class="fas fa-search text-light"></i></span>
@@ -50,7 +50,8 @@
                 </div>
                 <div id="menu" class="container-fluid">
                     <div class="row">
-                        <div class=" my-2 col-sm-6 col-md-3" v-for="(element, index) in menu">
+                        <div class=" my-2 col-sm-6 col-md-3" v-for="(element, index) in menu"
+                            v-if="searchPizza(element.name)">
                             <div class="pizza-card border border-dark rounded p-2">
                                 <div class="h5">{{ element.name }}<span class="text-color-amaranth h6 ps-2">&#8364 {{
                                         element.price

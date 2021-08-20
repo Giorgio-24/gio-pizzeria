@@ -293,6 +293,7 @@ var root = new Vue(
                     ]
                 },
             ],
+            searchMyPizza: "",
         },
 
         methods: {
@@ -304,6 +305,11 @@ var root = new Vue(
 
                 return ingredientsList.slice(0, -2);
             },
-
+            searchPizza(pizza) {
+                if (!this.searchMyPizza.trim()) return true;
+                const filter = this.searchMyPizza.trim().toLowerCase();
+                pizza = pizza.toLowerCase();
+                return pizza.includes(filter);
+            },
         },
     });
