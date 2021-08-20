@@ -26,7 +26,8 @@
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Cerca pizza per nome" aria-label="Username"
                     aria-describedby="basic-addon1" v-model="searchMyPizza">
-                <span class="input-group-text bg-light" id="basic-addon1"><i class="fas fa-backspace"></i></span>
+                <span class="input-group-text bg-light" id="basic-addon1" @click="searchMyPizza = ''"><i
+                        class="fas fa-backspace"></i></span>
                 <span class="input-group-text bg-color-amaranth" id="basic-addon1"><i
                         class="fas fa-search text-light"></i></span>
             </div>

@@ -293,7 +293,7 @@ var root = new Vue(
                     ]
                 },
             ],
-            searchMyPizza: "",
+            searchMyPizza: '',
         },
 
         methods: {
