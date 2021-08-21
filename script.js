@@ -294,6 +294,7 @@ var root = new Vue(
                 },
             ],
             searchMyPizza: '',
+            isItSpecial: false,
         },
 
         methods: {

@@ -41,18 +41,20 @@
             <section>
                 <div>
                     <ul id="pizzas-types" class="nav border-bottom">
-                        <li class="nav-item">
-                            <a class="nav-link active text-color-amaranth rounded-top" href="#">Pizze Classiche</a>
+                        <li class="nav-item" @click="isItSpecial = false">
+                            <a class="nav-link active text-color-amaranth rounded-top" href="#"
+                                @click="isItSpecial = false">Pizze Classiche</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-color-amaranth rounded-top" href="#">Pizze Speciali</a>
+                        <li class="nav-item" @click="isItSpecial = true">
+                            <a class="nav-link text-color-amaranth rounded-top" href="#"
+                                @click="isItSpecial = true">Pizze Speciali</a>
                         </li>
                     </ul>
                 </div>
                 <div id="menu" class="container-fluid">
                     <div class="row">
                         <div class=" my-2 col-sm-6 col-md-3" v-for="(element, index) in menu"
-                            v-if="searchPizza(element.name)">
+                            v-if="searchPizza(element.name) && element.special == isItSpecial">
                             <div class="pizza-card border border-dark rounded p-2">
                                 <div class="h5">{{ element.name }}<span class="text-color-amaranth h6 ps-2">&#8364 {{
                                         element.price
