@@ -15,7 +15,7 @@
 
 <body>
     <div id="root">
-        <div id="ei" class="position-fixed  bg-color-light-dark" v-if="showLightDarkBg == true"></div>
+        <div id="full-screen-bg" class="position-fixed  bg-color-light-dark" v-if="showLightDarkBg == true"></div>
         <header>
             <nav class="bg-color-amaranth d-flex justify-content-between text-light py-2 px-3">
                 <h1 class="h3">Giorgio's Pizza</h1>
@@ -43,27 +43,49 @@
                         class="fas fa-receipt me-2"></i><span>Filtro
                         Ingredienti</span></button>
             </div>
-
-            <div id="allori" class="w-75 bg-light position-absolute top-50 start-50 translate-middle rounded"
+            <!--^ FILTER BY TYPOLOGY -->
+            <div class="my-filter w-75 bg-light position-absolute top-50 start-50 translate-middle rounded"
                 v-if="showTypeFilter == true">
                 <div class="d-flex justify-content-between p-3">
-                    <div>Filtra per tipologia</div>
+                    <div class="h5">Filtra per tipologia</div>
                     <button type="button" class="btn-close" aria-label="Close"
                         @click="showLightDarkBg = false; showTypeFilter = false"></button>
                 </div>
-                <div class="border-top border-bottom p-3">
-                    <div>Base pizza <div><input type="radio" name="base"> Tutte <input type="radio" name="base">
+                <div class="border-top border-bottom p-4">
+                    <div>Base pizza <div class="mt-2"><input type="radio" name="base"> Tutte <input type="radio"
+                                name="base" class="ms-1">
                             Rosse
-                            <input type="radio" name="base"> Bianche
+                            <input type="radio" name="base" class="ms-1"> Bianche
                         </div>
                     </div>
-                    <div>Tipo pizze <div><input type="radio" name="type"> Tutte <input type="radio" name="type">
-                            Classiche <input type="radio" name="type"> Speciali</div>
+                    <div class="mt-3">Tipo pizze <div class="mt-2"><input type="radio" name="type"> Tutte <input
+                                type="radio" name="type" class="ms-1">
+                            Classiche <input type="radio" name="type" class="ms-1"> Speciali</div>
                     </div>
                 </div>
                 <div class="d-flex justify-content-end p-3"><button type="button" class="btn btn-secondary me-2"
                         @click="showLightDarkBg = false; showTypeFilter = false">Annulla</button> <button type="button"
                         class="btn bg-color-amaranth text-light">Filtra</button></div>
+            </div>
+            <!--^ FILTER BY INGREDIENTS -->
+            <div class="my-filter w-75 bg-light position-absolute top-50 start-50 translate-middle rounded"
+                v-if="showIngredientsFilter == true">
+                <div class="d-flex justify-content-between p-3">
+                    <div class="h5">Filtra per ingredienti</div>
+                    <button type="button" class="btn-close" aria-label="Close"
+                        @click="showLightDarkBg = false; showIngredientsFilter = false"></button>
+                </div>
+                <div class="container">
+                    <div class="row border-top border-bottom p-4">
+                        <div class="col-12 mb-3">SELEZIONA TUTTI</div>
+                        <hr>
+                        <div class="" v-for="">ingredienti</div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-end p-3"><button type="button" class="btn btn-secondary me-2"
+                        @click="showLightDarkBg = false; showIngredientsFilter = false">Annulla</button> <button
+                        type="button" class="btn bg-color-amaranth text-light">Filtra</button></div>
             </div>
             <hr class="border border-dark">
             <section>
