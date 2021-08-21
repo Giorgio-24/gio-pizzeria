@@ -15,6 +15,7 @@
 
 <body>
     <div id="root">
+        <div id="ei" class="position-fixed  bg-color-light-dark" v-if="showLightDarkBg == true"></div>
         <header>
             <nav class="bg-color-amaranth d-flex justify-content-between text-light py-2 px-3">
                 <h1 class="h3">Giorgio's Pizza</h1>
@@ -22,6 +23,7 @@
             </nav>
 
         </header>
+
         <main class="p-3 container-fluid">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Cerca pizza per nome" aria-label="Username"
@@ -32,22 +34,48 @@
                         class="fas fa-search text-light"></i></span>
             </div>
             <div id="filters" class="d-flex justify-content-between ">
-                <button type="button" class="btn btn-outline-primary text-color-amaranth"><i
-                        class="fas fa-sliders-h me-2"></i><span class="">Filtra Tipologia</span></button>
-                <button type="button" class="btn btn-outline-primary text-color-amaranth"><i
-                        class="fas fa-receipt me-2"></i><span class="">Filtro Ingredienti</span></button>
+                <button type="button" class="btn text-color-amaranth"
+                    @click="showLightDarkBg = true; showTypeFilter = true"><i
+                        class="fas fa-sliders-h me-2"></i><span>Filtra
+                        Tipologia</span></button>
+                <button type="button" class="btn text-color-amaranth"
+                    @click="showLightDarkBg = true; showIngredientsFilter = true"><i
+                        class="fas fa-receipt me-2"></i><span>Filtro
+                        Ingredienti</span></button>
+            </div>
+
+            <div id="allori" class="w-75 bg-light position-absolute top-50 start-50 translate-middle rounded"
+                v-if="showTypeFilter == true">
+                <div class="d-flex justify-content-between p-3">
+                    <div>Filtra per tipologia</div>
+                    <button type="button" class="btn-close" aria-label="Close"
+                        @click="showLightDarkBg = false; showTypeFilter = false"></button>
+                </div>
+                <div class="border-top border-bottom p-3">
+                    <div>Base pizza <div><input type="radio" name="base"> Tutte <input type="radio" name="base">
+                            Rosse
+                            <input type="radio" name="base"> Bianche
+                        </div>
+                    </div>
+                    <div>Tipo pizze <div><input type="radio" name="type"> Tutte <input type="radio" name="type">
+                            Classiche <input type="radio" name="type"> Speciali</div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end p-3"><button type="button" class="btn btn-secondary me-2"
+                        @click="showLightDarkBg = false; showTypeFilter = false">Annulla</button> <button type="button"
+                        class="btn bg-color-amaranth text-light">Filtra</button></div>
             </div>
             <hr class="border border-dark">
             <section>
                 <div>
                     <ul id="pizzas-types" class="nav border-bottom">
-                        <li class="nav-item" @click="isItSpecial = false">
-                            <a class="nav-link active text-color-amaranth rounded-top" href="#"
-                                @click="isItSpecial = false">Pizze Classiche</a>
+                        <li class="nav-item">
+                            <a class="nav-link text-color-amaranth rounded-top" href="#" @click="isItSpecial = false"
+                                :class="isItSpecial === false ? 'active' : ''">Pizze Classiche</a>
                         </li>
-                        <li class="nav-item" @click="isItSpecial = true">
-                            <a class="nav-link text-color-amaranth rounded-top" href="#"
-                                @click="isItSpecial = true">Pizze Speciali</a>
+                        <li class="nav-item">
+                            <a class="nav-link text-color-amaranth rounded-top" href="#" @click="isItSpecial = true"
+                                :class="isItSpecial === true ? 'active' : ''">Pizze Speciali</a>
                         </li>
                     </ul>
                 </div>

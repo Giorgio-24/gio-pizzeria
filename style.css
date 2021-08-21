@@ -10,6 +10,16 @@ a{
     text-decoration: none;
 }
 
+#ei{
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+}
+
+#allori{
+    z-index: 2
+}
+
 /*? TEXT-COLORS */
 .text-color-amaranth{
     color: #640606;
@@ -17,6 +27,10 @@ a{
 /*? BACKGROUND-COLORS */
 .bg-color-amaranth{
     background-color: #640606;
+}
+
+.bg-color-light-dark{
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /*= BODY */

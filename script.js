@@ -295,6 +295,9 @@ var root = new Vue(
             ],
             searchMyPizza: '',
             isItSpecial: false,
+            showLightDarkBg: false,
+            showTypeFilter: false,
+            showIngredientsFilter: false,
         },
 
         methods: {
