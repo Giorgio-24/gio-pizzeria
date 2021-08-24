@@ -101,11 +101,14 @@
                         </li>
                     </ul>
                 </div>
+                <!--^ PIZZAS -->
                 <div id="menu" class="container-fluid">
                     <div class="row">
                         <div class=" my-2 col-sm-6 col-md-3" v-for="(element, index) in menu"
                             v-if="searchPizza(element.name) && element.special == isItSpecial">
                             <div class="pizza-card border border-dark rounded p-2">
+                                <button class="border border-transparent rounded-circle text-light bg-color-amaranth"><i
+                                        class="fas fa-plus font-14 px-1"></i></button>
                                 <div class="h5">{{ element.name }}<span class="text-color-amaranth h6 ps-2">&#8364 {{
                                         element.price
                                         }}</span></div>
